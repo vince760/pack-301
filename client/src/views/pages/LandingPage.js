@@ -18,7 +18,7 @@ import {
   NavLink
 } from "reactstrap";
 import ReactPlayer from "react-player/youtube";
-
+import { isMobile } from "react-device-detect";
 import logo from "assets/img/landing/logo-main.jpg";
 import life from "assets/img/landing/life.png";
 import scoutMeIn from "assets/img/landing/scout-me-in.jpg";
@@ -48,9 +48,13 @@ const LandingPage = () => {
           sense of belonging.
         </h2>
       </Jumbotron>
-      <Container >
-        <ReactPlayer width={'60vw'} height={'60vh'} url={"https://youtu.be/e4o2JqQP0UA"} />
-      </Container>
+      <div style={{ justifySelf: "center" }}>
+        <ReactPlayer
+          width={isMobile ? "90vw" : "60vw"}
+          height={"60vh"}
+          url={"https://youtu.be/CglP4jgO4H0"}
+        />
+      </div>
 
       <Container className="my-5">
         <h2 className="text-center">About Us</h2>
