@@ -34,7 +34,7 @@ import {
   NavItem,
   NavLink,
   Nav,
-  Container,
+  Container
 } from "reactstrap";
 
 function AdminNavbar(props) {
@@ -46,10 +46,7 @@ function AdminNavbar(props) {
     window.addEventListener("resize", updateColor);
   });
   React.useEffect(() => {
-    if (
-      window.outerWidth < 993 &&
-      document.documentElement.className.indexOf("nav-open") !== -1
-    ) {
+    if (window.outerWidth < 993 && document.documentElement.className.indexOf("nav-open") !== -1) {
       document.documentElement.classList.toggle("nav-open");
     }
   }, [location]);
@@ -79,10 +76,7 @@ function AdminNavbar(props) {
   };
   return (
     <>
-      <Navbar
-        className={classnames("navbar-absolute fixed-top", color)}
-        expand="lg"
-      >
+      <Navbar className={classnames("navbar-absolute fixed-top", color)} expand="lg">
         <Container fluid>
           <div className="navbar-wrapper">
             <div className="navbar-minimize">
@@ -98,23 +92,17 @@ function AdminNavbar(props) {
             </div>
             <div
               className={classnames("navbar-toggle", {
-                toggled: sidebarOpen,
+                toggled: sidebarOpen
               })}
             >
-              <button
-                className="navbar-toggler"
-                type="button"
-                onClick={toggleSidebar}
-              >
+              <button className="navbar-toggler" type="button" onClick={toggleSidebar}>
                 <span className="navbar-toggler-bar bar1" />
                 <span className="navbar-toggler-bar bar2" />
                 <span className="navbar-toggler-bar bar3" />
               </button>
             </div>
             <NavbarBrand href="#pablo" onClick={(e) => e.preventDefault()}>
-              <span className="d-none d-md-block">
-                Pack 301 Payment Terminal
-              </span>
+              <span className="d-none d-md-block">Pack 301 Event</span>
               <span className="d-block d-md-none">PD PRO React</span>
             </NavbarBrand>
           </div>

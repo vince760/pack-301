@@ -38,7 +38,7 @@ function Sidebar(props) {
         initialState = {
           [prop.state]: getCollapseInitialState(prop.views),
           ...getCollapseStates(prop.views),
-          ...initialState,
+          ...initialState
         };
       }
       return null;
@@ -68,10 +68,7 @@ function Sidebar(props) {
         var st = {};
         st[prop["state"]] = !collapseStates[prop.state];
         return (
-          <li
-            className={getCollapseInitialState(prop.views) ? "active" : ""}
-            key={key}
-          >
+          <li className={getCollapseInitialState(prop.views) ? "active" : ""} key={key}>
             <a
               href="#pablo"
               data-toggle="collapse"
@@ -133,7 +130,7 @@ function Sidebar(props) {
     if (navigator.platform.indexOf("Win") > -1) {
       ps = new PerfectScrollbar(sidebar.current, {
         suppressScrollX: true,
-        suppressScrollY: false,
+        suppressScrollY: false
       });
     }
     return function cleanup() {
@@ -161,14 +158,10 @@ function Sidebar(props) {
       </div>
 
       <div className="sidebar-wrapper" ref={sidebar}>
-        <div className="user">
-          <div className="photo">
-            <img src={avatar} alt="Avatar" />
-          </div>
+        {/* <div className="user">
+         
           <div className="card-category">
-            <span>Chet Faker</span>
-
-            {/* <Collapse isOpen={openAvatar}>
+            <Collapse isOpen={openAvatar}>
               <ul className="nav">
                 <li>
                   <Link to="/admin/user-profile">
@@ -189,9 +182,9 @@ function Sidebar(props) {
                   </Link>
                 </li>
               </ul>
-            </Collapse> */}
+            </Collapse>
           </div>
-        </div>
+        </div> */}
         <Nav>{createLinks(props.routes)}</Nav>
       </div>
     </div>

@@ -39,14 +39,23 @@ const LandingPage = () => {
 
       <Jumbotron style={{ backgroundColor: "transparent" }} className="text-center">
         <h1 style={{ color: "gold" }}>
-          <strong>Join Cub Scouts Pack 301</strong>
+          <strong style={{ textShadow: "1px 1px 2px black" }}>Join Cub Scouts Pack 301</strong>
         </h1>
-        <h2>
-          Cub Scouts fosters leadership and teamwork in a fun, supportive environment. It promotes
-          outdoor adventures, skill-building, and community service, instilling lifelong values.
-          Through engaging activities', your child will develop confidence, responsibility, and a
-          sense of belonging.
-        </h2>
+        {!isMobile ? (
+          <h2 style={{ color: "black", textShadow: "1px 1px 2px gold" }}>
+            Cub Scouts fosters leadership and teamwork in a fun, supportive environment. It promotes
+            outdoor adventures, skill-building, and community service, instilling lifelong values.
+            Through engaging activities', your child will develop confidence, responsibility, and a
+            sense of belonging.
+          </h2>
+        ) : (
+          <p style={{ color: "black", textShadow: "1px 1px 2px gold" }}>
+            Cub Scouts fosters leadership and teamwork in a fun, supportive environment. It promotes
+            outdoor adventures, skill-building, and community service, instilling lifelong values.
+            Through engaging activities', your child will develop confidence, responsibility, and a
+            sense of belonging.
+          </p>
+        )}
       </Jumbotron>
       <div style={{ justifySelf: "center" }}>
         <ReactPlayer
