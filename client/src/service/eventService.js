@@ -25,4 +25,16 @@ const retrieveEventById = (id) => {
   return axios(config).then(helpers.onGlobalSuccess).catch(helpers.onGlobalError);
 };
 
-export { retrieveEvents, retrieveEventById };
+const verifyPortalLogin = async (password) => {
+  const config = {
+    method: "POST",
+    url: `/api/users/verify`,
+    crossdomain: true,
+    data: { password: password },
+    headers: { "Content-Type": "application/json" }
+  };
+
+  return axios(config).then(helpers.onGlobalSuccess).catch(helpers.onGlobalError);
+};
+
+export { retrieveEvents, retrieveEventById, verifyPortalLogin };

@@ -15,14 +15,49 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink
+  NavLink,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  Input,
+  ModalFooter,
+  FormGroup
 } from "reactstrap";
 import ReactPlayer from "react-player/youtube";
 import { isMobile } from "react-device-detect";
 import logo from "assets/img/landing/logo-main.jpg";
 import life from "assets/img/landing/life.png";
 import scoutMeIn from "assets/img/landing/scout-me-in.jpg";
+import * as eventService from "service/eventService";
+
 const LandingPage = () => {
+  const [loginModal, setLoginModal] = React.useState(false);
+  const [password, setPassword] = React.useState("");
+  const [passwordError, setPasswordError] = React.useState(false);
+  const handleEmail = () => {
+    window.location.href =
+      "mailto:temeculapack301cubscouts@gmail.com?subject=Cub Scout Membership Inquiry&body=Thank you for your interest in joining Cub Scout Pack 301. For additional information, please send us a message!";
+  };
+
+  const handleLoginModal = () => {
+    setLoginModal(!loginModal);
+  };
+
+  const handleUserLogin = async () => {
+    await eventService
+      .verifyPortalLogin(password)
+      .then((res) => {
+        console.log(res);
+
+        if (res.success === true) {
+          window.location.href = "/admin/dashboard";
+        }
+      })
+      .catch((err) => {
+        setPasswordError(true);
+      });
+  };
+
   return (
     <div
       style={{
@@ -31,11 +66,79 @@ const LandingPage = () => {
         backgroundImage: `url(${require("assets/img/landing/flag.JPG")})`
       }}
     >
+      <Modal
+        centered
+        className="content"
+        isOpen={loginModal}
+        toggle={() => {
+          handleLoginModal();
+        }}
+      >
+        <ModalHeader>Parent Login</ModalHeader>
+        <ModalBody>
+          <Container className="text-center">
+            {passwordError ? <p style={{ color: "red" }}>Incorrect Password</p> : null}
+            <FormGroup>
+              <Input
+                placeholder="Password"
+                onInput={(e) => {
+                  if (e.target.value.length === 0) {
+                    setPasswordError(false);
+                  }
+                  setPassword(e.target.value);
+                }}
+                type="password"
+                autoComplete="off"
+              />
+            </FormGroup>
+          </Container>
+        </ModalBody>
+        <ModalFooter>
+          <Row className="pr-3">
+            {" "}
+            <Button
+              style={{ color: "blue", backgroundColor: "gold" }}
+              size="md"
+              className="btn-round"
+              onClick={() => {
+                handleUserLogin();
+              }}
+            >
+              Login
+            </Button>
+            <Button
+              style={{ color: "blue", backgroundColor: "gold" }}
+              size="md"
+              className="btn-round"
+              onClick={() => {
+                handleLoginModal();
+              }}
+            >
+              Cancel
+            </Button>
+          </Row>
+        </ModalFooter>
+      </Modal>
       <Navbar
         style={{ backgroundImage: `url(${require("assets/img/landing/banner.jpg")})` }}
         light
         expand="md"
       ></Navbar>
+      <Row>
+        <Col lg={3} className="ml-auto" sm={6}>
+          <Button
+            style={{ color: "blue", backgroundColor: "gold" }}
+            size="lg"
+            className="btn-round"
+            color="warning"
+            onClick={() => {
+              handleLoginModal();
+            }}
+          >
+            Parent Portal
+          </Button>
+        </Col>
+      </Row>
 
       <Jumbotron style={{ backgroundColor: "transparent" }} className="text-center">
         <h1 style={{ color: "gold" }}>
@@ -64,9 +167,26 @@ const LandingPage = () => {
           url={"https://youtu.be/CglP4jgO4H0"}
         />
       </div>
-
+      <div style={{ paddingTop: "10vh" }} className="text-center ">
+        <Button
+          style={{ color: "blue", backgroundColor: "gold" }}
+          size="lg"
+          className="btn-round"
+          color="warning"
+          onClick={() => {
+            handleEmail();
+          }}
+        >
+          FIND OUT MORE
+        </Button>
+      </div>
       <Container className="my-5">
-        <h2 className="text-center">About Us</h2>
+        <h2
+          style={{ color: "gold", textShadow: "1px 1px 2px black", fontWeight: "bold" }}
+          className="text-center"
+        >
+          <strong>About Us</strong>
+        </h2>
         <Row>
           <Col md="4">
             <Card>
@@ -120,7 +240,8 @@ const LandingPage = () => {
       </Container>
       <Container className="text-center">
         <p style={{ color: "white" }}>
-          Copyright © 2024 Temecula Cub Scouts Pack 301 - All Rights Reserved.
+          Copyright © {1900 + new Date().getYear()} Temecula Cub Scouts Pack 301 - All Rights
+          Reserved.
         </p>
       </Container>
       <footer

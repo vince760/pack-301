@@ -25,6 +25,7 @@
   ],
   "author": "Creative Tim <hello@creative-tim.com> (https://www.creative-tim.com)",
   "dependencies": {
+    "@sweetalert2/theme-bootstrap-4": "^5.0.18",
     "axios": "^1.7.7",
     "bootstrap": "4.6.2",
     "chart.js": "3.9.1",
@@ -53,7 +54,8 @@
     "react-table": "7.8.0",
     "react-tagsinput": "3.20.1",
     "reactstrap": "8.10.0",
-    "sass": "1.62.1"
+    "sass": "1.62.1",
+    "sweetalert2": "^11.14.5"
   },
   "browserslist": [
     ">0.2%",
