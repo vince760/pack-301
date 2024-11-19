@@ -1,5 +1,3 @@
-// src/LandingPage.js
-
 import React from "react";
 import {
   Container,
@@ -12,10 +10,6 @@ import {
   Row,
   Col,
   Navbar,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
   Modal,
   ModalHeader,
   ModalBody,
@@ -34,13 +28,10 @@ const LandingPage = () => {
   const [loginModal, setLoginModal] = React.useState(false);
   const [password, setPassword] = React.useState("");
   const [passwordError, setPasswordError] = React.useState(false);
+
   const handleEmail = () => {
     window.location.href =
       "mailto:temeculapack301cubscouts@gmail.com?subject=Cub Scout Membership Inquiry&body=Thank you for your interest in joining Cub Scout Pack 301. For additional information, please send us a message!";
-  };
-
-  const handleLoginModal = () => {
-    setLoginModal(!loginModal);
   };
 
   const handleUserLogin = async () => {
@@ -50,12 +41,16 @@ const LandingPage = () => {
         console.log(res);
 
         if (res.success === true) {
-          window.location.href = "/admin/dashboard";
+          window.location.href = "/admin/events";
         }
       })
       .catch((err) => {
         setPasswordError(true);
       });
+  };
+
+  const handleLoginModal = () => {
+    setLoginModal(!loginModal);
   };
 
   return (
@@ -95,7 +90,6 @@ const LandingPage = () => {
         </ModalBody>
         <ModalFooter>
           <Row className="pr-3">
-            {" "}
             <Button
               style={{ color: "blue", backgroundColor: "gold" }}
               size="md"
@@ -124,20 +118,9 @@ const LandingPage = () => {
         light
         expand="md"
       ></Navbar>
+
       <Row>
-        <Col lg={3} className="ml-auto" sm={6}>
-          <Button
-            style={{ color: "blue", backgroundColor: "gold" }}
-            size="lg"
-            className="btn-round"
-            color="warning"
-            onClick={() => {
-              handleLoginModal();
-            }}
-          >
-            Parent Portal
-          </Button>
-        </Col>
+        <Col lg={3} className="ml-auto" sm={6}></Col>
       </Row>
 
       <Jumbotron style={{ backgroundColor: "transparent" }} className="text-center">
@@ -222,20 +205,33 @@ const LandingPage = () => {
                 <img style={{ width: "20vh" }} src={scoutMeIn} />
                 <CardTitle tag="h5">Values</CardTitle>
                 <CardText>
-                  <p>
-                    <strong> The Scout Oath</strong> On my honor I will do my best to do my duty to
-                    god and my country and to obey the Scout Law; to help people at all times; to
-                    keep myself physically strong, mentally awake, and morally straight.
-                  </p>
+                  <strong> The Scout Oath</strong> On my honor I will do my best to do my duty to
+                  god and my country and to obey the Scout Law; to help people at all times; to keep
+                  myself physically strong, mentally awake, and morally straight.
                   <br />
-                  <p>
-                    <strong> The Scout Law</strong> A Scout is: trustworthy, loyal, helpful,
-                    friendly, courteous, kind, obedient, cheerful, thrifty, brave, clean, reverent.
-                  </p>
+                  <strong> The Scout Law</strong> A Scout is: trustworthy, loyal, helpful, friendly,
+                  courteous, kind, obedient, cheerful, thrifty, brave, clean, reverent.
                 </CardText>
               </CardBody>
             </Card>
           </Col>
+        </Row>
+        <Row>
+          <Col className="col-md-4" />
+          <Col sm={8} md={4} className="col-md-4 text-center">
+            <Button
+              style={{ color: "blue", backgroundColor: "gold" }}
+              size="lg"
+              className="btn-round"
+              color="warning"
+              onClick={(e) => {
+                handleLoginModal(e);
+              }}
+            >
+              Parent Portal
+            </Button>
+          </Col>
+          <Col className="col-md-4" />
         </Row>
       </Container>
       <Container className="text-center">

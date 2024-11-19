@@ -1,18 +1,5 @@
 @charset "UTF-8";
-/*!
 
- =========================================================
- * Paper Dashboard PRO React - v1.3.0 based on Paper Dashboard 2 Pro - v2.0.1
- =========================================================
-
- * Product Page: https://www.creative-tim.com/product/paper-dashboard-pro-react
- * Copyright 2021 Creative Tim (http://www.creative-tim.com)
-
- =========================================================
-
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
- */
 .bootstrap-switch {
   display: inline-block;
   direction: ltr;
@@ -15120,16 +15107,7 @@ svg {
   line-height: 20px;
   padding-left: 3px; }
 
-/**
-* React Select v1.0.0-rc.10
-* ============
-* Created by Jed Watson and Joss Mackison for KeystoneJS, https://www.keystonejs.com/
-* https://twitter.com/jedwatson https://twitter.com/jossmackison https://twitter.com/keystonejs
-* MIT License: https://github.com/JedWatson/react-select
-*/
-/*
-This file was modified entirely by Creative Tim for React-Select v2.0.0
-*/
+
 .react-select .react-select__menu {
   top: 105%;
   max-width: 94%;

@@ -23,7 +23,7 @@
     "bootstrap4",
     "reactstrap"
   ],
-  "author": "Creative Tim <hello@creative-tim.com> (https://www.creative-tim.com)",
+  "author": "Vincent Vitale",
   "dependencies": {
     "@sweetalert2/theme-bootstrap-4": "^5.0.18",
     "axios": "^1.7.7",

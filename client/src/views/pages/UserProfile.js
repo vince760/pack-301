@@ -1,22 +1,7 @@
-/*!
 
-=========================================================
-* Paper Dashboard PRO React - v1.3.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-pro-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 
-// reactstrap components
+
 import {
   Button,
   Card,
@@ -28,7 +13,7 @@ import {
   Form,
   Input,
   Row,
-  Col,
+  Col
 } from "reactstrap";
 
 function UserProfile() {
@@ -39,10 +24,7 @@ function UserProfile() {
           <Col md="4">
             <Card className="card-user">
               <div className="image">
-                <img
-                  alt="..."
-                  src={require("assets/img/bg/damir-bosnjak.jpg")}
-                />
+                <img alt="..." src={require("assets/img/bg/damir-bosnjak.jpg")} />
               </div>
               <CardBody>
                 <div className="author">
@@ -111,12 +93,7 @@ function UserProfile() {
                         </span>
                       </Col>
                       <Col className="text-right" md="3" xs="3">
-                        <Button
-                          className="btn-round btn-icon"
-                          color="success"
-                          outline
-                          size="sm"
-                        >
+                        <Button className="btn-round btn-icon" color="success" outline size="sm">
                           <i className="fa fa-envelope" />
                         </Button>
                       </Col>
@@ -134,18 +111,13 @@ function UserProfile() {
                         </div>
                       </Col>
                       <Col md="7" xs="7">
-                        Creative Tim <br />
+                        Timmy Thompson <br />
                         <span className="text-success">
                           <small>Available</small>
                         </span>
                       </Col>
                       <Col className="text-right" md="3" xs="3">
-                        <Button
-                          className="btn-round btn-icon"
-                          color="success"
-                          outline
-                          size="sm"
-                        >
+                        <Button className="btn-round btn-icon" color="success" outline size="sm">
                           <i className="fa fa-envelope" />
                         </Button>
                       </Col>
@@ -169,12 +141,7 @@ function UserProfile() {
                         </span>
                       </Col>
                       <Col className="text-right" md="3" xs="3">
-                        <Button
-                          className="btn-round btn-icon"
-                          color="success"
-                          outline
-                          size="sm"
-                        >
+                        <Button className="btn-round btn-icon" color="success" outline size="sm">
                           <i className="fa fa-envelope" />
                         </Button>
                       </Col>
@@ -196,7 +163,7 @@ function UserProfile() {
                       <FormGroup>
                         <label>Company (disabled)</label>
                         <Input
-                          defaultValue="Creative Code Inc."
+                          defaultValue="Company"
                           disabled
                           placeholder="Company"
                           type="text"
@@ -206,18 +173,12 @@ function UserProfile() {
                     <Col className="px-1" md="3">
                       <FormGroup>
                         <label>Username</label>
-                        <Input
-                          defaultValue="michael23"
-                          placeholder="Username"
-                          type="text"
-                        />
+                        <Input defaultValue="michael23" placeholder="Username" type="text" />
                       </FormGroup>
                     </Col>
                     <Col className="pl-1" md="4">
                       <FormGroup>
-                        <label htmlFor="exampleInputEmail1">
-                          Email address
-                        </label>
+                        <label htmlFor="exampleInputEmail1">Email address</label>
                         <Input placeholder="Email" type="email" />
                       </FormGroup>
                     </Col>
@@ -226,21 +187,13 @@ function UserProfile() {
                     <Col className="pr-1" md="6">
                       <FormGroup>
                         <label>First Name</label>
-                        <Input
-                          defaultValue="Chet"
-                          placeholder="Company"
-                          type="text"
-                        />
+                        <Input defaultValue="Chet" placeholder="Company" type="text" />
                       </FormGroup>
                     </Col>
                     <Col className="pl-1" md="6">
                       <FormGroup>
                         <label>Last Name</label>
-                        <Input
-                          defaultValue="Faker"
-                          placeholder="Last Name"
-                          type="text"
-                        />
+                        <Input defaultValue="Faker" placeholder="Last Name" type="text" />
                       </FormGroup>
                     </Col>
                   </Row>
@@ -260,21 +213,13 @@ function UserProfile() {
                     <Col className="pr-1" md="4">
                       <FormGroup>
                         <label>City</label>
-                        <Input
-                          defaultValue="Melbourne"
-                          placeholder="City"
-                          type="text"
-                        />
+                        <Input defaultValue="Melbourne" placeholder="City" type="text" />
                       </FormGroup>
                     </Col>
                     <Col className="px-1" md="4">
                       <FormGroup>
                         <label>Country</label>
-                        <Input
-                          defaultValue="Australia"
-                          placeholder="Country"
-                          type="text"
-                        />
+                        <Input defaultValue="Australia" placeholder="Country" type="text" />
                       </FormGroup>
                     </Col>
                     <Col className="pl-1" md="4">

@@ -1,25 +1,6 @@
-/*!
-
-=========================================================
-* Paper Dashboard PRO React - v1.3.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-pro-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 // react component used to create a calendar with events on it
-import {
-  Calendar as ReactBigCalendar,
-  momentLocalizer,
-} from "react-big-calendar";
+import { Calendar as ReactBigCalendar, momentLocalizer } from "react-big-calendar";
 // dependency plugin for react-big-calendar
 import moment from "moment";
 // react component used to create alerts
@@ -57,7 +38,7 @@ function Calendar() {
     newEvents.push({
       title: e,
       start: slotInfo.start,
-      end: slotInfo.end,
+      end: slotInfo.end
     });
     setAlert(null);
     setEventsState(newEvents);
@@ -71,7 +52,7 @@ function Calendar() {
       ? (backgroundColor = backgroundColor + event.color)
       : (backgroundColor = backgroundColor + "default");
     return {
-      className: backgroundColor,
+      className: backgroundColor
     };
   };
   return (
