@@ -1,4 +1,3 @@
-
 import React from "react";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
@@ -7,7 +6,6 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import AdminNavbar from "components/Navbars/AdminNavbar.js";
 import Footer from "components/Footer/Footer.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
-
 
 import routes from "routes.js";
 
@@ -69,7 +67,7 @@ function Admin(props) {
     <div className="wrapper">
       <Sidebar {...props} routes={routes} bgColor={backgroundColor} activeColor={activeColor} />
       <div className="main-panel" ref={mainPanel}>
-        <AdminNavbar {...location} handleMiniClick={handleMiniClick} />
+        <AdminNavbar handleMiniClick={handleMiniClick} />
         <Routes>{getRoutes(routes)}</Routes>
         {
           // we don't want the Footer to be rendered on full screen maps page
