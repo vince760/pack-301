@@ -9,7 +9,11 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var eventRouter = require("./routes/events");
 var app = express();
-const port = process.env.PORT || 3001;
+
+
+// Log the HOST_URL to ensure it's being set correctly
+console.log("HOST_URL:", process.env.HOST_URL);
+
 
 // Log the HOST_URL to ensure it's being set correctly
 console.log("HOST_URL:", process.env.HOST_URL);
@@ -61,7 +65,7 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}, and the URL is ${process.env.HOST_URL}`);
-});
+app.listen();
+
+
 module.exports = app;
