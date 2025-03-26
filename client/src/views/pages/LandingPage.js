@@ -23,7 +23,7 @@ import logo from "assets/img/landing/logo-main.jpg";
 import life from "assets/img/landing/life.png";
 import scoutMeIn from "assets/img/landing/scout-me-in.jpg";
 import * as eventService from "service/eventService";
-
+import "assets/css/landingPage.css"; 
 const LandingPage = () => {
   const [loginModal, setLoginModal] = React.useState(false);
   const [password, setPassword] = React.useState("");
@@ -122,8 +122,8 @@ const LandingPage = () => {
       <Row>
         <Col lg={3} className="ml-auto" sm={6}></Col>
       </Row>
-
-      <Jumbotron style={{ backgroundColor: "transparent" }} className="text-center">
+      <div className="jumbotron">
+        {/* <Jumbotron style={{ backgroundColor: "transparent" }} className="text-center"> */}
         <h1 style={{ color: "gold" }}>
           <strong style={{ textShadow: "1px 1px 2px black" }}>Join Cub Scouts Pack 301</strong>
         </h1>
@@ -142,7 +142,8 @@ const LandingPage = () => {
             sense of belonging.
           </p>
         )}
-      </Jumbotron>
+        {/* </Jumbotron> */}
+      </div>
       <div style={{ justifySelf: "center" }}>
         <ReactPlayer
           width={isMobile ? "90vw" : "60vw"}
