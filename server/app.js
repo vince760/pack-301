@@ -14,6 +14,10 @@ var app = express();
 // Log the HOST_URL to ensure it's being set correctly
 console.log("HOST_URL:", process.env.HOST_URL);
 
+
+// Log the HOST_URL to ensure it's being set correctly
+console.log("HOST_URL:", process.env.HOST_URL);
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
@@ -62,5 +66,6 @@ app.use(function (err, req, res, next) {
 });
 
 app.listen();
+
 
 module.exports = app;
