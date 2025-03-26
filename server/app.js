@@ -1,3 +1,4 @@
+require("dotenv").config();
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
@@ -8,21 +9,29 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var eventRouter = require("./routes/events");
 var app = express();
+const port = process.env.PORT || 3001;
+
+// Log the HOST_URL to ensure it's being set correctly
+console.log("HOST_URL:", process.env.HOST_URL);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
 
-const allowedOrigins = ["http://localhost:3001", process.env.HOST_URL];
+const allowedOrigins = [process.env.HOST_URL, "http://localhost:8080"];
 app.use(
   cors({
     origin: function (origin, callback) {
+      console.log("Origin:", origin);
+      console.log("Allowed Origins:", allowedOrigins);
       if (allowedOrigins.includes(origin) || !origin) {
         callback(null, true);
       } else {
+        console.log("Blocked Origin:", origin);
         callback(new Error("Not allowed by CORS"));
       }
-    }
+    },
+    credentials: true // Add this line to allow credentials
   })
 );
 
@@ -52,4 +61,7 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}, and the URL is ${process.env.HOST_URL}`);
+});
 module.exports = app;

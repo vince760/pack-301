@@ -1,13 +1,12 @@
 import axios from "axios";
 import * as helpers from "./serviceHelpers";
-const baseUrl = process.env.URL_PREFIX
-
+const baseUrl = process.env.REACT_APP_URL_PREFIX;
+console.log("Base URL:", baseUrl);
 const retrieveEvents = () => {
   const config = {
     method: "GET",
     url: `${baseUrl}/api/events/`,
     crossdomain: true,
-
     headers: { "Content-Type": "application/json" }
   };
 
@@ -19,7 +18,6 @@ const retrieveEventById = (id) => {
     method: "GET",
     url: `${baseUrl}/api/events/${id}`,
     crossdomain: true,
-
     headers: { "Content-Type": "application/json" }
   };
 
@@ -32,6 +30,7 @@ const verifyPortalLogin = async (password) => {
     url: `${baseUrl}/api/users/verify`,
     crossdomain: true,
     data: { password: password },
+    withCredentials: true, 
     headers: { "Content-Type": "application/json" }
   };
 
